@@ -1,0 +1,71 @@
+.btn-group {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  border-radius: 16px;
+
+  font-size: 1rem;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  color: rgba(30, 30, 30, 0.4);
+  border: 1px solid rgba(158, 160, 168, 0.4);
+}
+
+.btn-outline {
+  padding: 8px 16px;
+
+  color: #1e1e1e;
+  background-color: #f3f3f3;
+  border: 1px solid #9ea0a8;
+  border-radius: 16px;
+}
+
+.btn-outline:disabled {
+  color: rgba(30, 30, 30, 0.4);
+  background-color: rgba(243, 243, 243, 0.4);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #7269ef;
+}
+
+.btn-primary:disabled {
+  background: rgba(114, 105, 239, 0.4);
+}
+
+.btn-outline-primary {
+  color: #7269ef;
+  background-color: #ffffff;
+
+  border: 1px solid #7269ef;
+}
+
+.btn-outline-primary:disabled {
+  color: rgba(114, 105, 239, 0.4);
+  border: 1px solid rgba(114, 105, 239, 0.4);
+}
+
+
+.btn.btn-checked::after {
+  content: "\2713";
+  margin-left: 5px;
+}
+
+.btn.btn-sm {
+  padding: 4px 20px;
+}

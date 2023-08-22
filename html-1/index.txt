@@ -1,0 +1,6 @@
+Trong file HTML chúng ta có thể thêm các file css ở phần đầu của file sử dụng <link>
+tag với phần tử rel có giá trị "stylesheet". và có thể thêm js vào phần đầu hoặc phần 
+thân của file sử dụng <script> tag. Lý do là vì phần đầu thường được sử dụng để khai báo 
+metadata cho trang như title, liên kết đến những resources ở bên ngoài, trong khi đó phần 
+thì khai báo về phần nội dung. Đặt css và js ở phần đầu thì chắc chắn rằng nó sẽ được load trước 
+khi các phần nội dung của trang web được load, có thể giảm lỗi khi rendering
