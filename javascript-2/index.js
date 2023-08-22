@@ -1,26 +1,42 @@
 const arr1 = [
-  { id: "1", quantity: 2 },
-  { id: "3", quantity: 2 },
+  { id: "2", quantity: 2 },
+  { id: "3", quantity: 3 },
+  { id: "1", quantity: 3 },
+  { id: "5", quantity: 3 },
 ];
 
 const arr2 = [
   { id: "1", quantity: 2 },
-  { id: "2", quantity: 2 },
-  { id: "3", quantity: 3 },
-  { id: "1", quantity: 3 },
+  { id: "3", quantity: 2 },
+  { id: "1", quantity: 5 },
+  { id: "5", quantity: 5 },
 ];
-function mergeProducts(arr1, arr2) {
-  const result = [];
-  arr1.forEach((product1) => {
-    const product2 = arr2.find((p) => p.id === product1.id);
-    if (product2) {
-      result.push({
-        id: product1.id,
-        quantity: product1.quantity + product2.quantity,
-      });
-    }
-  });
-  return result;
-}
 
-console.log(mergeProducts(arr1, arr2));
+const formatFunc = (arr) => {
+  return arr.reduce((acc, curr) => {
+    if (acc[curr.id]) {
+      acc[curr.id] += curr.quantity;
+    } else {
+      acc[curr.id] = curr.quantity;
+    }
+    return acc;
+  }, {});
+};
+
+const mergeFunc = (arr1, arr2) => {
+  const formatArr1 = formatFunc(arr1);
+  const formatArr2 = formatFunc(arr2);
+
+  const mergedArr = [];
+
+  for (const key in formatArr1) {
+    if (formatArr2[key]) {
+      const obj = { id: key, quantity: formatArr1[key] + formatArr2[key] };
+      mergedArr.push(obj);
+    }
+  }
+
+  console.log(mergedArr);
+};
+
+mergeFunc(arr1, arr2);
